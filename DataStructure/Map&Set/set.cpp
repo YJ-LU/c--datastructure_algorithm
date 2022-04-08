@@ -14,7 +14,7 @@ Set::Set(){
 	_head->next = _tail;
 	_tail->next = nullptr;
 	_tail->prev = _head;
-  _size = 0;
+  	_size = 0;
 }
   
 // copy constructor (you can call copyCode method)
@@ -139,35 +139,27 @@ Set::Iterator Set::find(ELEMENT_TYPE s) const{
 	}
 // return an iterator pointing at the begining of the list
 Set::Iterator Set::begin() const{
-	Set::Iterator it;
-	Set se;
-	it = se.begin();
-	return it;
+	Elem *cur = _head->next;	
+	return Iterator(cur);
 	}
 	
 	
 // return an iterator pointing at one element beyond the end of list
     Set::Iterator Set::end() const{
-    	Set::Iterator it;
-	    Set se;
-	    it = se.end();
-	    return it;
+    	Elem *cur = _tail->prev;	
+	return Iterator(cur);
 	  }
     	
 // return an reverse iterator pointing at the reverse beginning of the list
     Set::Reverse_Iterator Set::rbegin() const{
-    	Set::Reverse_Iterator rit;
-	    Set se;
-	    rit = se.rbegin();
-	    return rit;
+    	Elem *cur = _tail->prev;	
+	return Iterator(cur);
 	  }
     
  // return an reverse iterator pointing at one element beyond the beginning of list
     Set::Reverse_Iterator Set::rbegin() const{
-    	Set::Reverse_Iterator rit;
-	    Set se;
-	    rit = se.rend();
-	    return rit;
+    	Elem *cur = _head->next;	
+	return Iterator(cur);
 	  }
 	
 
